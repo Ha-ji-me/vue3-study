@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="timer">00:00:00</h1>
+    </div>
+    <div class="button">
+        <button id="button">START</button>
+    </div>
+    
+
+    <script>
+        //10未満に0を追加
+        const addZero = (value) => {
+            if(value < 10){
+                value = '0' + value;
+            }
+            return value;
+        }
+
+        const start_stop = document.getElementById('button');
+        start_stop.addEventListener('click', ()=>{
+            //時間の取得
+            let timer = new Date;
+            let hour = timer.getHours();//時
+            hour = addZero(hour);
+            let minutes = timer.getMinutes();//分
+            minutes = addZero(minutes);
+            let seconds = timer.getSeconds();//秒
+            seconds = addZero(seconds);
+            document.getElementById("timer").innerHTML= hour + ':' + minutes + ':' + seconds;
+        })
+        
+    </script>
+</body>
+</html>
