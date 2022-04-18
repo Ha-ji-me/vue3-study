@@ -9,7 +9,11 @@ const url1 = 'https://www.doutor.co.jp/dcs/';
 const url2 = 'https://www.anytimefitness.co.jp/';
 
 const isComplete = (todoItem : string) => {
-    alert(todoItem + 'を本当に完了しましたか？')
+    if(todoItem == ''){
+        alert('todoを設定しましょう！')
+    }else{
+        alert('「' + todoItem + '」' + 'を本当に完了しましたか？')
+    }
 }
 
 const inputTodo = (event:any) => {
