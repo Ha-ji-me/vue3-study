@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
+import TweetPostForm from './TweetPostForm.vue';
+import TweetList from './TweetList.vue';
 
     const tweets = ref([
         { id: 0, description: '佐藤健です'},
@@ -22,21 +24,21 @@ import { ref, reactive } from 'vue'
 
 <template>
 <div class="container">
-        <h1>Tweeter</h1>
-    <!-- 入力欄 -->
-    <div class="form-container">
-        <!-- ここで入力した値がinputtingDescriptionに入る（双方向に紐づく） -->
-        <input v-model="inputtingDescription"/>
-        <button class="save-button" v-on:click="postTweet()">post</button>
-    </div>
-    <!-- 追加されたテキスト欄 -->
+    <h1>Tweeter</h1>
+    <!-- ツイート欄 -->
+    <TweetPostForm />
+    <!-- <input v-model="inputtingDescription"/>
+    <button class="save-button" v-on:click="postTweet()">post</button> -->
+    
+    <!-- ツイートリスト欄 -->
     <div class="tweet-container">
         <p v-if="tweets.length <= 0">＊No tweets.</p>
         <ul>
-            <li v-for="tweet in tweets" v-bind:key="tweet.description" class="tweet-list">
+            <TweetList v-bind:tweets="tweets"/>
+            <!-- <li v-for="tweet in tweets" v-bind:key="tweet.description" class="tweet-list">
                 <span>{{ tweet.description }}</span>
                 <button @click="deleteTweet(tweet.id)" class="delete-button">delete</button>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>
@@ -49,8 +51,8 @@ import { ref, reactive } from 'vue'
     align-items: center;
     }
 
-.form-container {
-    /* display: flex; */
+/* .form-container {
+    display: flex;
     flex-direction: column;
     align-items: center;
     background-color: aliceblue;
@@ -58,9 +60,9 @@ import { ref, reactive } from 'vue'
     width: 60%;
     margin-bottom: 12px;
     border-radius: 4px;
-}
+} */
 
-.tweet-list {
+/* .tweet-list {
     list-style: none;
     margin-bottom: 12px;
     border-radius: 4px;
@@ -70,9 +72,9 @@ import { ref, reactive } from 'vue'
     background-color: rgb(204,219,233);
     padding: 8px 20px;
     width: 300px;
-}
+} */
 
-.save-button {
+/* .save-button {
     color: #fff;
     font-weight: bold;
     background-color: #68c9c9;
@@ -80,13 +82,13 @@ import { ref, reactive } from 'vue'
     border: none;
     width: 60px;
     height: 22px;
-}
+} */
 
-.save-button:hover {
+/* .save-button:hover {
     background-color: #37bdbd;
-}
+} */
 
-.delete-button {
+/* .delete-button {
     color: #fff;
     font-weight: bold;
     background-color: #c99a68;
@@ -98,5 +100,5 @@ import { ref, reactive } from 'vue'
 
 .delete-button:hover {
     background-color: #ac783f;
-}
+} */
 </style>

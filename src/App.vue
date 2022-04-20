@@ -4,15 +4,16 @@
 import HelloWorld from './components/HelloWorld.vue'
 import Todo from './components/Todo.vue'
 import TodoCard from './components/TodoCard.vue'
+import Tweet from './components/Tweet.vue'
 
 </script>
 
 <!-- 見た目を作っている部分 -->
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
   <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
-  <Todo />
-  <!-- <TodoCard/> -->
+  <!-- <Todo /> -->
+  <Tweet />
 </template>
 
 <style>
