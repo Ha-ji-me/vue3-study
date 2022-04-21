@@ -1,46 +1,60 @@
 <script setup lang="ts">
 const addForm = () => {
-    alert('追加しますか？')
+    alert('Do you really register column??')
 }
-const addName = () => {
-    
-}
-const addAge = () => {
-    
-}
+
 </script>
 
 <template>
 <div class="form-container">
-    <p>PersonPostFormです</p>
-    <div class="name-column">
-        name：<input :bind="addName">
+    <div class="input-container">
+        <div class="input-column">
+            <span>name:</span>
+            <input>
+        </div>
+        <div class="input-column">
+            <span>age:</span>
+            <input>
+        </div>
     </div>
-    <div class="age-column">
-        age：<input :bind="addAge">
-    </div>
-    <div class="add-button">
-        <button @click="addForm">追加</button>
-    </div>
+    <button @click="addForm" class="add-button">register</button>
 </div>
 </template>
 
 <style scoped>
 .form-container {
-    margin: 50px;
-    padding: 70px;
-    text-align: center; 
-    border: solid rgba(122, 86, 50, .6);
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color: rgb(255, 241, 226);
+    padding: 24px 0px; 
+    width: 50%;
+    margin-bottom: 12px;
+    border-radius: 4px;
 }
-.name-column {
-    padding:2px;
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom :20px;
 }
-.age-column {
-    padding:2px;
+
+.input-column {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
 }
-.add-button {
-    padding:5px;
+
+input {
+    width: 120px;
+    margin-bottom: 8px;
+}
+
+span {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 </style>
