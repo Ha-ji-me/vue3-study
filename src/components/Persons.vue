@@ -4,11 +4,8 @@ import PersonList from './PersonList.vue';
 </script>
 
 <template>
-<p>Persons.vueです</p>
 <div class="container">
-    <div class="form-container">
-        <PersonPostForm />
-    </div>
+    <PersonPostForm />
     <div class="list-container">
         <ul>
             <PersonList />
@@ -18,5 +15,10 @@ import PersonList from './PersonList.vue';
 
 </template>
 
-<style>
+<style scoped>
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 </style>
