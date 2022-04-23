@@ -1,8 +1,23 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-const addForm = () => {
-    alert('Do you really register column??')
+import { ref,reactive } from 'vue'
+
+const inputtingName = ref<string>('')
+const inputtingAge = ref<number>(0)
+
+const emit = defineEmits(['register'])
+const props = defineProps([msg: String])
+
+const register = () => {
+    // alert('Do you really register column??')
+    const person = {
+        id: Math.random(),
+        name: inputtingName.value,
+        age: inputtingAge.value,
+    }
+    emit('register', person)
 }
+
+
 
 </script>
 
@@ -11,14 +26,14 @@ const addForm = () => {
     <div class="input-container">
         <div class="input-column">
             <span>name:</span>
-            <input>
+            <input class="input" v-model="inputtingName">
         </div>
         <div class="input-column">
             <span>age:</span>
-            <input>
+            <input class="input" v-model="inputtingAge" type="number">
         </div>
     </div>
-    <button @click="addForm" class="add-button">register</button>
+    <button @click="register" class="add-button">register</button>
 </div>
 </template>
 
