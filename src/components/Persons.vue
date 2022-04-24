@@ -10,7 +10,7 @@ import PersonList from './PersonList.vue';
     <PersonPostForm />
     <div class="list-container">
         <ul>
-            <PersonList/>
+            <PersonList />
         </ul>
     </div>
 </div>

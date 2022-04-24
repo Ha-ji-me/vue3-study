@@ -5,10 +5,9 @@ const inputtingName = ref<string>('')
 const inputtingAge = ref<number>(0)
 
 const emit = defineEmits(['register'])
-const props = defineProps([msg: String])
 
 const register = () => {
-    // alert('Do you really register column??')
+    alert('Do you really register column??')
     const person = {
         id: Math.random(),
         name: inputtingName.value,
@@ -18,7 +17,11 @@ const register = () => {
 }
 
 
-
+const a = {a: 'a'}
+const b = {b: 'b'}
+const c = {}
+// c.push(a)
+console.log(c)
 </script>
 
 <template>
